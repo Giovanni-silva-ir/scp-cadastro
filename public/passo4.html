@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socopa</title>
+    <link rel="stylesheet" href="lib/css/materialize.min.css">
+    <link rel="stylesheet" href="lib/css/site.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="center-align">
+                <img src="lib/img/logo.png" alt="logotipo socopa" class="logo" />
+            </div>
+        </div>
+    </header>
+
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field col s6">
+                    <select>
+                            <option value="1">Superior Completo</option>
+                            <option value="2">Superior Incompleto</option>
+                            <option value="3">Fundamental</option>
+                        </select>
+                    <label>Grau de formação</label>
+                </div>
+                <div class="input-field col s6">
+                    <select>
+                        <option value="1">Engenheiro</option>
+                        <option value="2">Banqueiro</option>
+                        <option value="3">Médico</option>
+                    </select>
+                    <label>Ocupação</label>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s8 input-field">
+                    <input type="text" class="validate">
+                    <label>Nome da empresa</label>
+                </div>
+                <div class="col s4 input-field">
+                    <input type="text" class="validate">
+                    <label>CEP</label>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s12 input-field">
+                    <input type="text" class="validate">
+                    <label>Endereço da empresa<label>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s8 input-field">
+                    <input type="text" class="validate">
+                    <label>Numero</label>
+                </div>
+                <div class="col s4 input-field">
+                    <input type="text" class="validate">
+                    <label>Bairro</label>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s8 input-field">
+                    <input type="text" class="validate">
+                    <label>Complemento</label>
+                </div>
+                <div class="col s4 input-field">
+                    <select>
+                        <option value="1">São Paulo</option>
+                        <option value="2">Bahia</option>
+                        <option value="3">Minas Gerais</option>
+                        <option value="3">ETC</option>
+                    </select>
+                    <label>Estado</label>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s8 input-field">
+                    <input type="text" class="validate">
+                    <label>Cidade</label>
+                </div>
+                <div class="col s4 input-field">
+                    <input type="text" class="validate">
+                    <label>Tel. Comercial</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <a class="btn waves-effect waves-light" href="passo5.html" name="action">
+                            Próximo
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/materialize.min.js"></script>
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 80, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socopa</title>
+    <link rel="stylesheet" href="lib/css/materialize.min.css">
+    <link rel="stylesheet" href="lib/css/site.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="center-align">
+                <img src="lib/img/logo.png" alt="logotipo socopa" class="logo" />
+            </div>
+        </div>
+    </header>
+
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="col s6 input-field">
+                    <label>Rendimentos Mensais</label>
+                    <p class="range-field">
+                        <input type="range" min="0" step="500" value="0" max="10000" />
+                    </p>
+                </div>
+                <div class="col s6 input-field">
+                    <label>Valor dos bens móveis</label>
+                    <p class="range-field">
+                        <input type="range" min="0" step="500" value="0" max="1000000" />
+                    </p>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s6 input-field">
+                    <label>Valor dos bens imóveis</label>
+                    <p class="range-field">
+                        <input type="range" min="0" step="500" value="0" max="1000000" />
+                    </p>
+                </div>
+                <div class="col s6 input-field">
+                    <label>Valor de outros bens</label>
+                    <p class="range-field">
+                        <input type="range" min="0" step="500" value="0" max="1000000" />
+                    </p>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="col s4 input-field">
+                    <select>
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="1">Bradesco</option>
+                                    <option value="2">Itau</option>
+                                    <option value="2">Santander</option>
+                                </select>
+                    <label>Nome do banco</label>
+                </div>
+                <div class="col s4 input-field">
+                    <input type="text" />
+                    <label>Num. agência</label>
+                </div>
+                <div class="col s4 input-field">
+                    <input type="text" />
+                    <label>Num. conta</label>
+                </div>
+            </div>
+            <div class="col s12">
+                    <div class="col s7">
+                        <p>Tipo de conta</p>
+                        <div class="switch">
+                            <label>
+                            Corrente
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            Poupança
+                        </label>
+                        </div>
+                    </div>
+                    <div class="col s5">
+                            <p>Conta conjunta</p>
+                            <div class="switch">
+                                <label>
+                                Não
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                Sim
+                            </label>
+                            </div>
+                        </div>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <a class="btn waves-effect waves-light" href="passo6.html" name="action">
+                            Próximo
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/materialize.min.js"></script>
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 80, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
+</body>
+
+</html>

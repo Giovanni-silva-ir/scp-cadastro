@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socopa</title>
+    <link rel="stylesheet" href="lib/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="lib/css/site.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="center-align">
+                <img src="lib/img/logo.png" alt="logotipo socopa" class="logo" />
+            </div>
+        </div>
+    </header>
+
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">Nome da mãe</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">Nome do pai</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s6 input-field"><input type="text"><label>Celular</label></div>
+                <div class="col s6 input-field"><input type="text"><label>Telefone Fixo</label></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12">
+                    <p>É uma pessoa políticamente Exposta - PPE</p>
+                </div>
+                <div class="col s12">
+                    <div class="switch">
+                        <label>
+                        NÃO
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        SIM
+                    </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="col s12">
+                    <p>Tem relacionamento com uma Pessoa Politicamente Exposta - PPER?</p>
+                </div>
+                <div class="col s12">
+                    <div class="switch">
+                        <label>
+                            NÃO
+                            <input type="checkbox">
+                            <span class="lever"></span>
+                            SIM
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="center-align">
+                    <a class="btn waves-effect waves-light" href="passo3.html" name="action">
+                            Próximo
+                        </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue pulse modal-trigger" href="#help_modal">
+              <i class="large material-icons">help_outline</i>
+            </a>
+    </div>
+
+    <div id="help_modal" class="modal">
+        <div class="modal-content">
+            <h4>Ajuda</h4>
+            <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                      <div class="collapsible-header">Pessoa Politicamente Exposta</div>
+                      <div class="collapsible-body"><span>Uma Pessoa Politicamente Exposta é aquela que desempenha ou tenha desempenhado, nos últimos cinco anos, no Brasil ou no exterior, cargos, empregos ou funções públicas relevantes, assim como seus representantes, familiares e outras pessoas de seu relacionamento próximo.
+                        </span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header">US Persons</div>
+                      <div class="collapsible-body"><span>As US Persons em geral serão indivíduos com nacionalidade norte-americana, nascidos nos EUA ou com pais norte-americanos, pessoas com visto de permanência nos EUA, exceto alguns estudantes, ou residentes nos EUA, independentemente de serem residentes fiscais ou de terem também nacionalidade em outro país.</span></div>
+                    </li>
+                    <li>
+                      <div class="collapsible-header">Porquê a Socopa precisa disso?</div>
+                      <div class="collapsible-body"><span>Toda instituição financeira tem como dever caracterizar ou não seus clientes como Pessoa Politicamente Exposta ou Pessoa Relacionada a Pessoa Politicamente Exposta. </span></div>
+                    </li>
+                  </ul>
+                        
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/materialize.min.js"></script>
+    <script>
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 80, // Creates a dropdown of 15 years to control year,
+            today: 'Today',
+            clear: 'Clear',
+            close: 'Ok',
+            closeOnSelect: false // Close upon selecting a date,
+        });
+
+        $(document).ready(function () {
+            $('select').material_select();
+            $('.modal').modal();
+        });
+    </script>
+</body>
+
+</html>
