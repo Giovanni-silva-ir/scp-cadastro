@@ -3,6 +3,6 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.listen(process.env.port || 80, function(){
+app.listen(process.env.PORT || 8080, function(){
 	console.log('app running');
 });
