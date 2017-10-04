@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div v-for="papel in itemData">
+            {{papel.simbolo}} | {{papel.valorAtual}}
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+    <script>
+
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDlvkrTcrCIzQ_nM-bpJxU0OwLr5eeGtIM",
+            authDomain: "my-marketdata.firebaseapp.com",
+            databaseURL: "https://my-marketdata.firebaseio.com",
+            projectId: "my-marketdata",
+            storageBucket: "my-marketdata.appspot.com",
+            messagingSenderId: "480762644343"
+        };
+        firebase.initializeApp(config);
+
+        var database = firebase.database();
+
+        function gravarPapel(codigoPapel, desc, simb, valor) {
+            firebase.database().ref('papeis/' + codigoPapel).set({
+                simbolo: simb,
+                descricao: desc,
+                valorAtual: valor
+            });
+        }
+
+        var app = new Vue({
+            el: '#app',
+            firebase:{
+                itemData: database.ref('papeis/')
+            },
+            data: {
+                itemData: undefined
+            },
+            methods: {
+                atualizarDados: function (data) {
+                    this.itemData = data;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
