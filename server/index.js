@@ -36,7 +36,7 @@ const localData = [{
         rangeFrom: 33,
         rangeTo: 35,
         value: 35,
-        desc:'Vale do Rio Doce'
+        desc: 'Vale do Rio Doce'
     },
 ];
 
@@ -51,16 +51,19 @@ const generate = function () {
     });
 };
 
-const updateDatabase = function(){
+const updateDatabase = function () {
     generate();
     const updates = {};
     const uPath = '/papeis/';
-    localData.forEach(function(item){
-        updates[uPath + item.papel] = {
-            simbolo: item.papel,
-            descricao: item.desc,
-            valorAtual: item.value
-        };
+    localData.forEach(function (item) {
+        const shouldUpdate = randomFromInterval(0, 100) > 74;
+        if (shouldUpdate) {
+            updates[uPath + item.papel] = {
+                simbolo: item.papel,
+                descricao: item.desc,
+                valorAtual: item.value
+            };
+        }
     });
     admin.database().ref().update(updates);
 };
