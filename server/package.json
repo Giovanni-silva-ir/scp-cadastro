@@ -1,0 +1,14 @@
+{
+  "name": "quotes-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Giovanni Silva <giovanni.silva@outlook.com> (fb.com/G1gio)",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^5.4.1"
+  }
+}
